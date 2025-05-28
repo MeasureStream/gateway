@@ -1,11 +1,14 @@
 import json
 import time
 import paho.mqtt.client as mqtt
+from dotenv import load_dotenv
+import os 
+load_dotenv()
 
-BROKER = "172.20.0.50"
+BROKER = "100.78.181.75"
 PORT = 1883
-USERNAME = "measurestream"
-PASSWORD = "measurestream"
+USERNAME =  os.getenv("MQTT_USERNAME")
+PASSWORD = os.getenv("MQTT_PASSWORD") 
 
 # Callback connection
 def on_connect(client, userdata, flags, rc):
