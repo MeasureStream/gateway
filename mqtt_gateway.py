@@ -53,7 +53,7 @@ def on_message(client, userdata, msg):
     # send topic
     message = json.dumps(response)
     client.publish(uplink_topic, message, qos=1, retain=False)
-    print(f"📤 Inviato a {uplink_topic}: {message}")
+    print(f"Sent to {uplink_topic}: {message}")
 
 # MQTT init
 client = mqtt.Client()
